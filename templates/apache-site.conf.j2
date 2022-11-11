@@ -1,0 +1,7 @@
+<VirtualHost *:80>
+	ServerName {{ var_domain_name  }}	
+	ServerAdmin webmaster@{{ var_domain_name  }}
+	DocumentRoot {{ var_html_dir.path  }}
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
