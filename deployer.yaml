@@ -2,6 +2,7 @@
   hosts: srv
   vars:
       var_domain_name: "awesome-site"
+      var_zip_file_name: "./awesome-site.zip"
   tasks:
     - name: Upgrade packages
       apt:
@@ -13,7 +14,7 @@
          [apache2, apache2-bin, apache2-data, apache2-utils]
         state: present
     - name: Create HTML dir
-      file: 
+      file:
         path: "var/www/{{ var_domain_name }}"
         owner: www-data
         group: www-data
@@ -21,12 +22,12 @@
         state: directory
       register: var_html_dir
     - name: Unzip awesome-site
-      src: "~/awesome-site.zip"
+      src: "{{ var_zip_file_name }}"
       dest: "{{ var_html_dir.path }}"
       extra_opts: [--strip-components=1]
     - name: Generate awesome-site config file
       template:
-        src: "site.conf.js"
+        src: "apache-site.conf.j2"
         dest: "/etc/apache2/sites-available/{{ var_domain_name }}.conf"
     - name: Enable awesome-site
       command: a2ensile "{{ var_domain_name }}"
