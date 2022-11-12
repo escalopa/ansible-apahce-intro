@@ -26,9 +26,10 @@
         name: unzip
         state: present
     - name: Unzip awesome-site
-      src: "{{ var_zip_file_name }}"
-      dest: "{{ var_html_dir.path }}"
-      extra_opts: [--strip-components=1]
+      unarchive:
+        src: "{{ var_zip_file_name }}"
+        dest: "{{ var_html_dir.path }}"
+        extra_opts: [--strip-components=1]
     - name: Generate awesome-site config file
       template:
         src: "apache-site.conf.j2"
