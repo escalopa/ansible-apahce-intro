@@ -29,4 +29,14 @@ cp ~/.ssh/KEY_NAME ./credentials/ansible
 - Change hostname in `hosts.yaml` to the ip address of your host (Or the name bined to the ip address)
 - Change hostname in `deployer.yaml` exactly under the line `hosts` to the ip address of your host (Or the name bined to the ip address)
 
+---
 
+**Useful links about ansible**
+
+[ansible-apt](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_module.html)
+
+[ansible-file](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/file_module.html)
+
+[ansible-unarchive](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/unarchive_module.html)
+
+[ansible-template](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/template_module.html)
