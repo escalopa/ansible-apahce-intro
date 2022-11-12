@@ -21,6 +21,10 @@
         mode: '0755'
         state: directory
       register: var_html_dir
+    - name: Install unzip
+      apt:
+        name: unzip
+        state: present
     - name: Unzip awesome-site
       src: "{{ var_zip_file_name }}"
       dest: "{{ var_html_dir.path }}"
