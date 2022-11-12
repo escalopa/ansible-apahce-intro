@@ -1,5 +1,5 @@
 - name: Deploy my awesome site
-  hosts: srv
+  hosts: server
   vars:
       var_domain_name: "awesome-site"
       var_zip_file_name: "./awesome-site.zip"
