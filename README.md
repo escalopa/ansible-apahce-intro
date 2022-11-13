@@ -1,4 +1,5 @@
-# ansible-apahce-intro
+# ansible-apahce-site-deployer
+
 Auto deploy site with ansible
 
 ## Deploy your site
@@ -11,7 +12,7 @@ If you have a different distribution than `ubuntu` then refer to the ansible ins
 curl "https://raw.githubusercontent.com/escalopa/script-installer/main/scripts/ansible.sh"  | bash
 ```
 
-### Git clone repo & cd in 
+### Git clone repo & CD in 
 
 ```
 git clone https://github.com/escalopa/ansible-apahce-site-deployer.git && cd ansible-apahce-site-deployer
@@ -26,10 +27,11 @@ cp ~/.ssh/KEY_NAME ./credentials/ansible
 
 ### Set hostname in yaml files
 
-- Change hostname in `hosts.yaml` to the ip address of your host (Or the name bined to the ip address)
-- Change hostname in `deployer.yaml` exactly under the line `hosts` to the ip address of your host (Or the name bined to the ip address)
+- Change hostname in `hosts.yaml` to the ip address of your host (Or the name bound to the ip address)
+- Change hostname in `deployer.yaml` exactly under the line `hosts` to the ip address of your host (Or the name bound to the ip address)
 
 ### Run playbook
+Now we are ready to go, run the playbook with
 ```shell
 ansible-playbook deployer.yaml 
 ```
